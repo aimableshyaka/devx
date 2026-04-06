@@ -3,11 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>XYZ Ltd - Company Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: url('https://source.unsplash.com/random/1600x600?technology') no-repeat center center/cover;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px #000;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: auto;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        .about, .services, .portfolio, .contact {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            padding: 40px 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .about img, .portfolio img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-  <h2>Signup Form </h2>
-    <input type="text" placeholder="Enter your Username"><br>
-    <input type="password" placeholder="Entr your password"><br>
-    <button>Login</button>
+
+<header>
+    <h1>XYZ Ltd</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Welcome to XYZ Ltd</h2>
+    <p>Delivering innovative solutions to elevate your business and bring your ideas to life.</p>
+</section>
+
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>XYZ Ltd is a leading company in providing modern technology solutions for businesses worldwide. We focus on quality, innovation, and customer satisfaction.</p>
+    <img src="https://source.unsplash.com/random/800x400?office" alt="About XYZ Ltd">
+</section>
+
+<section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+        <div>
+            <h3>Web Development</h3>
+            <p>Creating responsive and dynamic websites tailored to your business needs.</p>
+        </div>
+        <div>
+            <h3>Mobile Apps</h3>
+            <p>Building efficient and user-friendly mobile applications for iOS and Android.</p>
+        </div>
+        <div>
+            <h3>Cloud Solutions</h3>
+            <p>Providing scalable cloud services to enhance your business efficiency.</p>
+        </div>
+        <div>
+            <h3>Consulting</h3>
+            <p>Expert advice to help your company grow and innovate in a competitive market.</p>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+    <h2>Our Portfolio</h2>
+    <div class="grid" id="portfolio-images">
+        <!-- Random images inserted by JS -->
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@xyzltd.com</p>
+    <p>Phone: +250 789 123 456</p>
+    <p>Address: Kigali, Rwanda</p>
+    <button onclick="alert('Thank you for contacting us!')">Send Message</button>
+</section>
+
+<footer>
+    &copy; 2026 XYZ Ltd. All rights reserved.
+</footer>
+
+<script>
+    // JavaScript to generate random Unsplash images for Portfolio
+    const portfolioContainer = document.getElementById('portfolio-images');
+
+    for(let i = 1; i <= 6; i++) {
+        const img = document.createElement('img');
+        img.src = `https://source.unsplash.com/random/400x300?technology,${i}`;
+        img.alt = 'Portfolio Image';
+        portfolioContainer.appendChild(img);
+    }
+</script>
+
+</body> 
 </html>
